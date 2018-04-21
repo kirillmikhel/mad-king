@@ -18,13 +18,17 @@ public class GameManager : MonoBehaviour {
 	public int dayToLoose1stCard = 15;
 	public int dayToLoose2ndCard = 25;
 
-	public int kingsMood = 0;
-
 	private Deck requestDeck = null;
+	private Deck replyDeck = null;
+	private Hand hand = null;
 
 	// Use this for initialization
 	void Start () {
 		requestDeck = GameObject.Find ("RequestDeck").GetComponent<Deck> ();
+		replyDeck = GameObject.Find ("ReplyDeck").GetComponent<Deck> ();
+		hand = GameObject.Find ("Hand").GetComponent<Hand> ();
+
+		NextDay ();
 	}
 
 	// Update is called once per frame
@@ -42,9 +46,12 @@ public class GameManager : MonoBehaviour {
 
 		// TODO: Get new Request
 	
-		kingsMood = Random.Range (-1, 2);
+		// TODO: Update environment for Jest and dog
 
-		// TODO: Update hand and draw a card
+		// TODO: draw a card
+
+		hand.AddCard (replyDeck.DrawCard ());
+
 	}
 
 	private void CheckWinConditions () {

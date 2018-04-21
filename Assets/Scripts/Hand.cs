@@ -13,4 +13,9 @@ public class Hand : MonoBehaviour {
 	void Update () {
 		
 	}
+
+	public void AddCard (Transform card) {
+		card.SetParent (transform);
+		card.localScale = new Vector3 (1, 1, 1);
+	}
 }
