@@ -21,16 +21,12 @@ public class ReplyCard : MonoBehaviour {
 		switch (kingsMood) {
 		case -1:
 			return "no";
-			break;
 		case 0:
 			return "later";
-			break;
 		case 1:
 			return "yes";
-			break;
 		default:
 			return "wat";
-			break;
 		}
 	}
 
