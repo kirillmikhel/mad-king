@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour {
 
@@ -22,11 +23,16 @@ public class GameManager : MonoBehaviour {
 	private Deck replyDeck = null;
 	private Hand hand = null;
 
+	private Text UIDaysLeft = null;
+	private Text UIHappiness = null;
+
 	// Use this for initialization
 	void Start () {
 		requestDeck = GameObject.Find ("RequestDeck").GetComponent<Deck> ();
 		replyDeck = GameObject.Find ("ReplyDeck").GetComponent<Deck> ();
 		hand = GameObject.Find ("Hand").GetComponent<Hand> ();
+		UIDaysLeft = GameObject.Find ("DaysLeft/Text").GetComponent<Text> ();
+		UIHappiness = GameObject.Find ("Happiness/Text").GetComponent<Text> ();
 
 		NextDay ();
 	}
@@ -34,7 +40,8 @@ public class GameManager : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-
+		UIDaysLeft.text = (daysToWin - currentDay).ToString();
+		UIHappiness.text = (happiness).ToString();
 	}
 
 	public void NextDay () {
@@ -47,8 +54,6 @@ public class GameManager : MonoBehaviour {
 		// TODO: Get new Request
 	
 		// TODO: Update environment for Jest and dog
-
-		// TODO: draw a card
 
 		hand.AddCard (replyDeck.DrawCard ());
 
