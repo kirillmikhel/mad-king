@@ -22,9 +22,6 @@ public class GameManager : MonoBehaviour {
 
 	public string[] willHappen;
 
-	public bool jestIsSad = false;
-	public bool dogHasFood = false;
-
 	private Deck requestDeck = null;
 	private Deck replyDeck = null;
 	private Hand hand = null;
@@ -38,6 +35,7 @@ public class GameManager : MonoBehaviour {
 	private Text UIHappiness = null;
 	private Text UIProblems = null;
 
+	public Image UINight;
 	public Text UIStatsFood = null;
 	public Text UIStatsGold = null;
 	public Text UIStatsWeapons = null;
@@ -105,8 +103,8 @@ public class GameManager : MonoBehaviour {
 
 		hand.AddCard (replyDeck.DrawCard ());
 
-		dogHasFood = Random.Range (0, 100) > 50;
-		jestIsSad = Random.Range (0, 100) > 50;
+		dog.hasFood = Random.Range (0, 100) > 50;
+		jest.isSad = Random.Range (0, 100) > 50;
 
 		mediator.SetRequest(requestDeck.DrawCard ());
 
@@ -124,9 +122,19 @@ public class GameManager : MonoBehaviour {
 	}
 
 	private IEnumerator Day () {
+ 		// Fade in		
+		while(UINight.color.a > 0) {
+			Color nightColor = UINight.color;
+			yield return new WaitForSeconds (Time.deltaTime);
+			nightColor.a -= Time.deltaTime;
+			UINight.color = nightColor;
+		}
+		UINight.gameObject.SetActive (false);
+
+		yield return new WaitForSeconds (1);
 		RequestCard request = mediator.GetRequest ();
 
-		mediator.GetComponent<Talkable>().Say ("Your majesty, " + request.initialText);
+		mediator.GetComponent<Talkable>().Say ("Your Majesty, " + request.initialText);
 		yield return new WaitUntil (() => mediator.GetRequest ().reply != "");
 		mediator.GetComponent<Talkable>().Silent ();
 
@@ -151,9 +159,9 @@ public class GameManager : MonoBehaviour {
 
 			bool yesJest = Random.Range (0, 100) > 50;
 
-			jest.GetComponent<Talkable> ().Say (jestIsSad ? "Whatever... " + (yesJest ? "Yes" : "No") : "Absolutely yes!");
+			jest.GetComponent<Talkable> ().Say (jest.isSad ? "Whatever... " + (yesJest ? "Yes" : "No") : "Absolutely yes!");
 
-			mediator.GetRequest ().reply = jestIsSad ? (yesJest ? "yes" : "no") : "yes";
+			mediator.GetRequest ().reply = jest.isSad ? (yesJest ? "yes" : "no") : "yes";
 			break;
 		case "ask_dog":
 			king.GetComponent<Talkable> ().Say ("Ask my dog");
@@ -162,9 +170,9 @@ public class GameManager : MonoBehaviour {
 
 			king.GetComponent<Talkable>().Silent ();
 
-			dog.GetComponent<Talkable> ().Say (dogHasFood ? "Hmph hmph... (later)" : "Rrrrr! (no)");
+			dog.GetComponent<Talkable> ().Say (dog.hasFood ? "Hmph hmph... (later)" : "Rrrrr! (no)");
 
-			mediator.GetRequest ().reply = dogHasFood ? "later" : "no";
+			mediator.GetRequest ().reply = dog.hasFood ? "later" : "no";
 			break;
 		case "yes":
 			king.GetComponent<Talkable> ().Say ("Yes");
@@ -192,7 +200,18 @@ public class GameManager : MonoBehaviour {
 		mediator.GetComponent<Talkable>().Silent ();
 		mediator.EndRequest ();
 
-		yield return new WaitForSeconds (3);
+		yield return new WaitForSeconds (1);
+
+		// Fade out
+		UINight.gameObject.SetActive (true);
+		while(UINight.color.a < 1) {
+			Color nightColor = UINight.color;
+			yield return new WaitForSeconds (Time.deltaTime);
+			nightColor.a += Time.deltaTime;
+			UINight.color = nightColor;
+		}
+
+		yield return new WaitForSeconds (1);
 
 		NextDay ();
 	}
@@ -222,6 +241,9 @@ public class GameManager : MonoBehaviour {
 				population += value;
 				break;
 			case "army":
+				army += value;
+				break;
+			case "workers":
 				army += value;
 				break;
 			case "weapons":
@@ -257,7 +279,7 @@ public class GameManager : MonoBehaviour {
 		population += GetPopulationChange ();
 
 		happiness += 
-			(food < 0 ? -10 : 2) // food availablity
+			(food < 0 ? -5 : 2) // food availablity
 			+ (army < population / 4 ? -5 : 2) // safety
 			+ (gold < 0 ? -5 : 0) // salary
 			+ (weapons < army ? - (int) (army - weapons) / 4 : 0) // weapons availablity

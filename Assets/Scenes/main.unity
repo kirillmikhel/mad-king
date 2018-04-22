@@ -1167,6 +1167,60 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0c4aa025614df45fbb581790855cd9fa, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &235722456
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 235722457}
+  - component: {fileID: 235722458}
+  m_Layer: 0
+  m_Name: Sell building resources (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &235722457
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 235722456}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.00015942258, y: -0.00009565355, z: 0}
+  m_LocalScale: {x: 1.0000011, y: 1.0000011, z: 1.0000011}
+  m_Children: []
+  m_Father: {fileID: 2031547732}
+  m_RootOrder: 27
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &235722458
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 235722456}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09c724369e3a64985a5b814f9624ae9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  initialText: we could sell oiur building materials to get some gold. Should we do
+    it? (costs 100 building materials, adds 100 gold)
+  postponeText: As you wish, Your Majesty. We can do it anytime.
+  agreeText: As you wish, Your Majesty. Gold could be more useful.
+  disagreeText: As you wish, Your Majesty. Building materials could be more useful.
+  watText: Didn't get it
+  onStart: []
+  onAgree:
+  - gold:100
+  - buildingResources:-100
+  onDisagree: []
+  onPostpone: []
+  postponable: 1
+  reply: 
 --- !u!1001 &239862669
 Prefab:
   m_ObjectHideFlags: 0
@@ -3201,6 +3255,60 @@ RectTransform:
   m_PrefabParentObject: {fileID: 224638721636799466, guid: a7b4d54880ee24e2592629627968d14c,
     type: 2}
   m_PrefabInternal: {fileID: 518520372}
+--- !u!1 &524011207
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 524011208}
+  - component: {fileID: 524011209}
+  m_Layer: 0
+  m_Name: Mine gold
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &524011208
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 524011207}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.00009565355, y: -0.000047826776, z: 0}
+  m_LocalScale: {x: 1.0000011, y: 1.0000011, z: 1.0000011}
+  m_Children: []
+  m_Father: {fileID: 2031547732}
+  m_RootOrder: 24
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &524011209
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 524011207}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09c724369e3a64985a5b814f9624ae9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  initialText: we could mine gold in the old mines. However, it seems dangerous. Should
+    we do it? (adds 200 gold, loose 5 workers)
+  postponeText: As you wish, Your Majesty. We can do it anytime.
+  agreeText: As you wish, Your Majesty. Wish our miners luck!
+  disagreeText: As you wish, Your Majesty. Better safe than sorry.
+  watText: Didn't get it
+  onStart: []
+  onAgree:
+  - gold:200
+  - workers:-5
+  onDisagree: []
+  onPostpone: []
+  postponable: 1
+  reply: 
 --- !u!224 &525665551 stripped
 RectTransform:
   m_PrefabParentObject: {fileID: 224393894036414278, guid: 0c4aa025614df45fbb581790855cd9fa,
@@ -3739,6 +3847,7 @@ RectTransform:
   m_Children:
   - {fileID: 1646752293}
   - {fileID: 561068995}
+  - {fileID: 707072036}
   m_Father: {fileID: 1177720731}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4653,6 +4762,80 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f98544649d1924a4c8ba0ef9524fbeef, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &707072035
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 707072036}
+  - component: {fileID: 707072038}
+  - component: {fileID: 707072037}
+  m_Layer: 0
+  m_Name: Text (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &707072036
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 707072035}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.3333301, y: 0.24849805, z: 0.5000003}
+  m_Children: []
+  m_Father: {fileID: 619807670}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 160, y: 30}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &707072037
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 707072035}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 28
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 1
+    m_MaxSize: 40
+    m_Alignment: 4
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 1
+    m_LineSpacing: 1
+  m_Text: The King
+--- !u!222 &707072038
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 707072035}
 --- !u!1001 &721114658
 Prefab:
   m_ObjectHideFlags: 0
@@ -5149,6 +5332,7 @@ RectTransform:
   m_Children:
   - {fileID: 289495640}
   - {fileID: 825762049}
+  - {fileID: 1938453859}
   m_Father: {fileID: 1177720731}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5181,6 +5365,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3e8c1b836e1d47929cf7a185ad71dd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasFood: 0
+  text: {fileID: 1938453857}
 --- !u!1 &812546332
 GameObject:
   m_ObjectHideFlags: 0
@@ -6794,6 +6980,7 @@ RectTransform:
   - {fileID: 1642908614}
   - {fileID: 191415542}
   - {fileID: 1093813826}
+  - {fileID: 1577635313}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -8155,6 +8342,80 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1384879584}
+--- !u!1 &1388751982
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1388751983}
+  - component: {fileID: 1388751985}
+  - component: {fileID: 1388751984}
+  m_Layer: 0
+  m_Name: Text
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1388751983
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1388751982}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_Children: []
+  m_Father: {fileID: 2041519269}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 160, y: 30}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1388751984
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1388751982}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 28
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 1
+    m_MaxSize: 40
+    m_Alignment: 4
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 1
+    m_LineSpacing: 1
+  m_Text: Jest
+--- !u!222 &1388751985
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1388751982}
 --- !u!1001 &1394291408
 Prefab:
   m_ObjectHideFlags: 0
@@ -9506,6 +9767,74 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 68861db020c8045d28cf3945a9676916, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1577635312
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1577635313}
+  - component: {fileID: 1577635315}
+  - component: {fileID: 1577635314}
+  m_Layer: 5
+  m_Name: Night
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1577635313
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1577635312}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1177720731}
+  m_RootOrder: 11
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1577635314
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1577635312}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+--- !u!222 &1577635315
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1577635312}
 --- !u!224 &1603567365 stripped
 RectTransform:
   m_PrefabParentObject: {fileID: 224972512422787054, guid: f98544649d1924a4c8ba0ef9524fbeef,
@@ -10374,12 +10703,11 @@ MonoBehaviour:
   dayToLoose1stCard: 10
   dayToLoose2ndCard: 20
   willHappen: []
-  jestIsSad: 0
-  dogHasFood: 0
   mediator: {fileID: 1658909569}
   king: {fileID: 619807672}
   jest: {fileID: 2041519271}
   dog: {fileID: 796736939}
+  UINight: {fileID: 1577635314}
   UIStatsFood: {fileID: 2064262233}
   UIStatsGold: {fileID: 1237874992}
   UIStatsWeapons: {fileID: 894615935}
@@ -10588,6 +10916,60 @@ RectTransform:
   m_PrefabParentObject: {fileID: 224463949549179150, guid: 5c53c6ac94af14298aa9bf427f19b04e,
     type: 2}
   m_PrefabInternal: {fileID: 1785953562}
+--- !u!1 &1808341784
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1808341785}
+  - component: {fileID: 1808341786}
+  m_Layer: 0
+  m_Name: Mine gold (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1808341785
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1808341784}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.00012753806, y: -0.00007971129, z: 0}
+  m_LocalScale: {x: 1.0000011, y: 1.0000011, z: 1.0000011}
+  m_Children: []
+  m_Father: {fileID: 2031547732}
+  m_RootOrder: 25
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1808341786
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1808341784}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09c724369e3a64985a5b814f9624ae9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  initialText: we could mine gold in the old mines. However, it seems dangerous. Should
+    we do it? (adds 200 gold, loose 5 workers)
+  postponeText: As you wish, Your Majesty. We can do it anytime.
+  agreeText: As you wish, Your Majesty. Wish our miners luck!
+  disagreeText: As you wish, Your Majesty. Better safe than sorry.
+  watText: Didn't get it
+  onStart: []
+  onAgree:
+  - gold:200
+  - workers:-5
+  onDisagree: []
+  onPostpone: []
+  postponable: 1
+  reply: 
 --- !u!224 &1818719180 stripped
 RectTransform:
   m_PrefabParentObject: {fileID: 224393894036414278, guid: 0c4aa025614df45fbb581790855cd9fa,
@@ -11232,11 +11614,139 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b82cdc804f8df4eb38e54f0a64c0f09d, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1938453856
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1938453859}
+  - component: {fileID: 1938453858}
+  - component: {fileID: 1938453857}
+  m_Layer: 0
+  m_Name: Text (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1938453857
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1938453856}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 28
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 1
+    m_MaxSize: 40
+    m_Alignment: 4
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 1
+    m_LineSpacing: 1
+  m_Text: Dog
+--- !u!222 &1938453858
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1938453856}
+--- !u!224 &1938453859
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1938453856}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_Children: []
+  m_Father: {fileID: 796736937}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 160, y: 30}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &1952540377 stripped
 RectTransform:
   m_PrefabParentObject: {fileID: 224638721636799466, guid: a7b4d54880ee24e2592629627968d14c,
     type: 2}
   m_PrefabInternal: {fileID: 469531744}
+--- !u!1 &1956465114
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1956465115}
+  - component: {fileID: 1956465116}
+  m_Layer: 0
+  m_Name: Sell building resources
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1956465115
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1956465114}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.00012753806, y: -0.00007971129, z: 0}
+  m_LocalScale: {x: 1.0000011, y: 1.0000011, z: 1.0000011}
+  m_Children: []
+  m_Father: {fileID: 2031547732}
+  m_RootOrder: 26
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1956465116
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1956465114}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09c724369e3a64985a5b814f9624ae9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  initialText: we could sell oiur building materials to get some gold. Should we do
+    it? (costs 100 building materials, adds 100 gold)
+  postponeText: As you wish, Your Majesty. We can do it anytime.
+  agreeText: As you wish, Your Majesty. Gold could be more useful.
+  disagreeText: As you wish, Your Majesty. Building materials could be more useful.
+  watText: Didn't get it
+  onStart: []
+  onAgree:
+  - gold:100
+  - buildingResources:-100
+  onDisagree: []
+  onPostpone: []
+  postponable: 1
+  reply: 
 --- !u!224 &1984136214 stripped
 RectTransform:
   m_PrefabParentObject: {fileID: 224959084931723444, guid: b82cdc804f8df4eb38e54f0a64c0f09d,
@@ -11422,6 +11932,10 @@ Transform:
   - {fileID: 1371259289}
   - {fileID: 862900283}
   - {fileID: 1503821336}
+  - {fileID: 524011208}
+  - {fileID: 1808341785}
+  - {fileID: 1956465115}
+  - {fileID: 235722457}
   m_Father: {fileID: 1177720731}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -11573,6 +12087,7 @@ RectTransform:
   m_Children:
   - {fileID: 481394503}
   - {fileID: 2048741992}
+  - {fileID: 1388751983}
   m_Father: {fileID: 1177720731}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -11605,6 +12120,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42a99d58148d74dafb1e7b4f5face625, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isSad: 0
+  text: {fileID: 1388751984}
 --- !u!1001 &2048741991
 Prefab:
   m_ObjectHideFlags: 0
