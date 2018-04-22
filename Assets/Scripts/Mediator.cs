@@ -28,7 +28,14 @@ public class Mediator : MonoBehaviour {
 	}
 
 	public void EndRequest() {
-		Destroy (GetComponentInChildren<RequestCard> ().gameObject);
+		RequestCard request = GetRequest ();
+		if (request.postponable && request.reply == "later") {
+			Deck requestDeck = GameObject.Find ("RequestDeck").GetComponent<Deck> ();
+			requestDeck.AddCard (request.transform);
+			requestDeck.Shuffle ();
+		}
+
+		Destroy (request.gameObject);
 	}
 
 }

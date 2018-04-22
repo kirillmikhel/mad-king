@@ -37,7 +37,7 @@ public class RequestCard : MonoBehaviour {
 			game.willHappen = onDisagree;
 			return disagreeText;
 		case "later":
-			game.willHappen = onPostpone;
+			game.willHappen = postponable ? onPostpone : onDisagree;
 			return postponeText;
 		default:
 			return watText;

@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour {
 	public int happiness = 70;
 	public int population = 100;
 	public int army = 50;
+	public int workers = 20;
 
 	public int food = 500;
 	public int gold = 300;
@@ -16,8 +17,8 @@ public class GameManager : MonoBehaviour {
 
 	public int daysToWin = 30;
 	public int currentDay = 0;
-	public int dayToLoose1stCard = 15;
-	public int dayToLoose2ndCard = 25;
+	public int dayToLoose1stCard = 10;
+	public int dayToLoose2ndCard = 20;
 
 	public string[] willHappen;
 
@@ -35,6 +36,7 @@ public class GameManager : MonoBehaviour {
 
 	private Text UIDaysLeft = null;
 	private Text UIHappiness = null;
+	private Text UIProblems = null;
 
 	public Text UIStatsFood = null;
 	public Text UIStatsGold = null;
@@ -42,6 +44,7 @@ public class GameManager : MonoBehaviour {
 	public Text UIStatsBuildingResources = null;
 	public Text UIStatsPopulation = null;
 	public Text UIStatsArmy = null;
+	public Text UIStatsWorkers = null;
 
 	// Use this for initialization
 	void Start () {
@@ -51,6 +54,7 @@ public class GameManager : MonoBehaviour {
 
 		UIDaysLeft = GameObject.Find ("DaysLeft/Text").GetComponent<Text> ();
 		UIHappiness = GameObject.Find ("Happiness/Text").GetComponent<Text> ();
+		UIProblems = GameObject.Find ("Problems").GetComponent<Text> ();
 
 		NextDay ();
 	}
@@ -58,26 +62,46 @@ public class GameManager : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-		UIDaysLeft.text = (daysToWin - currentDay).ToString();
+		UIDaysLeft.text = (daysToWin - currentDay + 1).ToString();
 		UIHappiness.text = (happiness).ToString();
 
-		UIStatsFood.text = "Food: " + food;
-		UIStatsGold.text = "Gold: " + gold;
+		string problemsText = "";
+
+		if (food < 0)
+			problemsText += "Hunger\n";
+		if (gold < 0)
+			problemsText += "Need more gold\n";
+		if (army < population / 4)
+			problemsText += "Small army\n";
+		if (weapons < army)
+			problemsText += "Not enough weapons\n";
+		if (buildingResources < 0)
+			problemsText += "Need more building resources\n";
+
+		UIProblems.text = problemsText;
+
+		UIStatsFood.text = "Food: " + food + " (" + GetFoodChange() + ")";
+		UIStatsGold.text = "Gold: " + gold + " (" + GetGoldChange() + ")";
 		UIStatsWeapons.text = "Weapons: " + weapons;
-		UIStatsBuildingResources.text = "Building resources: " + buildingResources;
-		UIStatsPopulation.text = "Population: " + population;
+		UIStatsBuildingResources.text = "Building materials: " + buildingResources + " (" + GetBuildingResourcesChange() + ")";
+		UIStatsPopulation.text = "Population: " + population + " (" + GetPopulationChange() + ")";
 		UIStatsArmy.text = "Army: " + army;
+		UIStatsWorkers.text = "Workers: " + workers;
 	}
 
 	public void NextDay () {
 		currentDay++;
 
-		// TODO: Update stats
+		UpdateStats ();
 
 		ResolveStatsChange (willHappen);
-//		willHappen = [];
+		willHappen = new string[0];
 
 		CheckWinConditions ();
+
+		if (currentDay == dayToLoose1stCard || currentDay == dayToLoose2ndCard) {
+			hand.DiscardRandomCard ();
+		}
 
 		hand.AddCard (replyDeck.DrawCard ());
 
@@ -90,7 +114,7 @@ public class GameManager : MonoBehaviour {
 	}
 
 	private void CheckWinConditions () {
-		if (happiness < 30) {
+		if (happiness <= 0) {
 			// TODO: Show failure screen
 		}
 
@@ -123,11 +147,13 @@ public class GameManager : MonoBehaviour {
 
 			yield return new WaitForSeconds (3);
 
-			king.GetComponent<Talkable>().Silent ();
+			king.GetComponent<Talkable> ().Silent ();
 
-			jest.GetComponent<Talkable> ().Say (jestIsSad ? "Whatever... (later)" : "Absolutely yes!");
+			bool yesJest = Random.Range (0, 100) > 50;
 
-			mediator.GetRequest ().reply = jestIsSad ? "later" : "yes";
+			jest.GetComponent<Talkable> ().Say (jestIsSad ? "Whatever... " + (yesJest ? "Yes" : "No") : "Absolutely yes!");
+
+			mediator.GetRequest ().reply = jestIsSad ? (yesJest ? "yes" : "no") : "yes";
 			break;
 		case "ask_dog":
 			king.GetComponent<Talkable> ().Say ("Ask my dog");
@@ -205,5 +231,38 @@ public class GameManager : MonoBehaviour {
 				break;
 			}
 		}
+	}
+
+	private int GetFoodChange () {
+		return (int)(- population - army - workers) / 2;
+	}
+
+	private int GetGoldChange () {
+		return - army - workers + (int) population / 4;
+	}
+
+	private int GetBuildingResourcesChange () {
+		return workers;
+	}
+
+	private int GetPopulationChange() {
+		return (int)(food/100);
+	}
+
+	private void UpdateStats () {
+		food += GetFoodChange ();
+		gold += GetGoldChange ();
+		buildingResources += GetBuildingResourcesChange();
+
+		population += GetPopulationChange ();
+
+		happiness += 
+			(food < 0 ? -10 : 2) // food availablity
+			+ (army < population / 4 ? -5 : 2) // safety
+			+ (gold < 0 ? -5 : 0) // salary
+			+ (weapons < army ? - (int) (army - weapons) / 4 : 0) // weapons availablity
+			;
+
+		happiness = Mathf.Clamp (happiness, 0, 100);
 	}
 }

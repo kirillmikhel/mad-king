@@ -18,4 +18,8 @@ public class Hand : MonoBehaviour {
 		card.SetParent (transform);
 		card.localScale = new Vector3 (1, 1, 1);
 	}
+
+	public void DiscardRandomCard () {
+		Destroy (transform.GetChild(Random.Range(0,transform.childCount)).gameObject);
+	}
 }

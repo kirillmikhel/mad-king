@@ -14,7 +14,7 @@ public class Deck : MonoBehaviour {
 		
 	}
 
-	void Shuffle () {
+	public void Shuffle () {
 		for(int i = 0; i < transform.childCount; i++) {
 			Transform card = transform.GetChild (Random.Range (0, transform.childCount));
 			card.SetParent (null);
@@ -24,5 +24,9 @@ public class Deck : MonoBehaviour {
 
 	public Transform DrawCard() {
 		return transform.GetChild (0);
+	}
+
+	public void AddCard (Transform card) {
+		card.SetParent (transform);
 	}
 }
