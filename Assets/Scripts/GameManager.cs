@@ -244,7 +244,7 @@ public class GameManager : MonoBehaviour {
 				army += value;
 				break;
 			case "workers":
-				army += value;
+				workers += value;
 				break;
 			case "weapons":
 				weapons += value;

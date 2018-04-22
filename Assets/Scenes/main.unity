@@ -113,6 +113,60 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &13738125
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 13738126}
+  - component: {fileID: 13738127}
+  m_Layer: 0
+  m_Name: Sell building resources (3)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &13738126
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 13738125}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.00025507613, y: -0.00014348033, z: 0}
+  m_LocalScale: {x: 1.0000011, y: 1.0000011, z: 1.0000011}
+  m_Children: []
+  m_Father: {fileID: 2031547732}
+  m_RootOrder: 30
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &13738127
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 13738125}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09c724369e3a64985a5b814f9624ae9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  initialText: we could sell our building materials to get some gold. Should we do
+    it? (costs 100 building materials, adds 100 gold)
+  postponeText: As you wish, Your Majesty. We can do it anytime.
+  agreeText: As you wish, Your Majesty. Gold could be more useful.
+  disagreeText: As you wish, Your Majesty. Building materials could be more useful.
+  watText: Didn't get it
+  onStart: []
+  onAgree:
+  - gold:100
+  - buildingResources:-100
+  onDisagree: []
+  onPostpone: []
+  postponable: 1
+  reply: 
 --- !u!1001 &15175188
 Prefab:
   m_ObjectHideFlags: 0
@@ -384,7 +438,7 @@ Transform:
   m_LocalScale: {x: 0.9999988, y: 0.9999988, z: 0.9999988}
   m_Children: []
   m_Father: {fileID: 2031547732}
-  m_RootOrder: 10
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &67452420
 MonoBehaviour:
@@ -399,9 +453,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   initialText: 'there are people outside the castle''s gates. They seem like bandits.
     Should we open the gates? '
-  postponeText: As you wish, your majesty. I hope they'll go away.
-  agreeText: As you wish, your majesty
-  disagreeText: As you wish, your majesty
+  postponeText: As you wish, Your Majesty. I hope they'll go away.
+  agreeText: As you wish, Your Majesty
+  disagreeText: As you wish, Your Majesty
   watText: Didn't get it
   onStart: []
   onAgree:
@@ -1194,7 +1248,7 @@ Transform:
   m_LocalScale: {x: 1.0000011, y: 1.0000011, z: 1.0000011}
   m_Children: []
   m_Father: {fileID: 2031547732}
-  m_RootOrder: 27
+  m_RootOrder: 28
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &235722458
 MonoBehaviour:
@@ -1207,7 +1261,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09c724369e3a64985a5b814f9624ae9f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  initialText: we could sell oiur building materials to get some gold. Should we do
+  initialText: we could sell our building materials to get some gold. Should we do
     it? (costs 100 building materials, adds 100 gold)
   postponeText: As you wish, Your Majesty. We can do it anytime.
   agreeText: As you wish, Your Majesty. Gold could be more useful.
@@ -1670,7 +1724,7 @@ Transform:
   m_LocalScale: {x: 0.9999988, y: 0.9999988, z: 0.9999988}
   m_Children: []
   m_Father: {fileID: 2031547732}
-  m_RootOrder: 19
+  m_RootOrder: 22
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &285856304
 MonoBehaviour:
@@ -1685,15 +1739,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   initialText: thieves in our arsenal! Should we do nothing and let them steal? (loose
     20 weapons)
-  postponeText: As you wish, your majesty
-  agreeText: As you wish, your majesty
-  disagreeText: As you wish, your majesty
+  postponeText: As you wish, Your Majesty
+  agreeText: As you wish, Your Majesty
+  disagreeText: As you wish, Your Majesty
   watText: Didn't get it
   onStart: []
   onAgree:
-  - gold:-200
+  - weapons:-20
   onDisagree: []
-  onPostpone: []
+  onPostpone:
+  - weapons:-20
   postponable: 0
   reply: 
 --- !u!1001 &289423029
@@ -2218,7 +2273,7 @@ Transform:
   m_LocalScale: {x: 0.9999988, y: 0.9999988, z: 0.9999988}
   m_Children: []
   m_Father: {fileID: 2031547732}
-  m_RootOrder: 5
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &363249371
 MonoBehaviour:
@@ -2233,9 +2288,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   initialText: we could give some more food to our people, so it could make them happier.
     Should we do it? (requires 300 food, adds 25 happiness)
-  postponeText: As you wish, your majesty
-  agreeText: As you wish, your majesty
-  disagreeText: As you wish, your majesty
+  postponeText: As you wish, Your Majesty
+  agreeText: As you wish, Your Majesty
+  disagreeText: As you wish, Your Majesty
   watText: Didn't get it
   onStart: []
   onAgree:
@@ -2401,7 +2456,7 @@ Transform:
   m_LocalScale: {x: 0.9999988, y: 0.9999988, z: 0.9999988}
   m_Children: []
   m_Father: {fileID: 2031547732}
-  m_RootOrder: 6
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &400721106
 MonoBehaviour:
@@ -2416,9 +2471,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   initialText: 'there are people outside the castle''s gates. They seem like bandits.
     Should we open the gates? '
-  postponeText: As you wish, your majesty. I hope they'll go away.
-  agreeText: As you wish, your majesty
-  disagreeText: As you wish, your majesty
+  postponeText: As you wish, Your Majesty. I hope they'll go away.
+  agreeText: As you wish, Your Majesty
+  disagreeText: As you wish, Your Majesty
   watText: Didn't get it
   onStart: []
   onAgree:
@@ -3012,7 +3067,7 @@ Transform:
   m_LocalScale: {x: 0.9999988, y: 0.9999988, z: 0.9999988}
   m_Children: []
   m_Father: {fileID: 2031547732}
-  m_RootOrder: 9
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &492797630
 MonoBehaviour:
@@ -3027,9 +3082,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   initialText: we could increase our army so our people would feel more safe. Should
     we do it? (costs 50 gold, adds 25 army)
-  postponeText: As you wish, your majesty
-  agreeText: As you wish, your majesty
-  disagreeText: As you wish, your majesty
+  postponeText: As you wish, Your Majesty
+  agreeText: As you wish, Your Majesty
+  disagreeText: As you wish, Your Majesty
   watText: Didn't get it
   onStart: []
   onAgree:
@@ -3320,6 +3375,60 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 1015568431}
   m_Script: {fileID: 11500000, guid: 01ace8ef0286a43e8a85f6eab166b7d3, type: 3}
+--- !u!1 &526590211
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 526590212}
+  - component: {fileID: 526590213}
+  m_Layer: 0
+  m_Name: Hire more workers
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &526590212
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 526590211}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.000031884516, y: -0.000031884516, z: 0}
+  m_LocalScale: {x: 1.0000011, y: 1.0000011, z: 1.0000011}
+  m_Children: []
+  m_Father: {fileID: 2031547732}
+  m_RootOrder: 31
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &526590213
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 526590211}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09c724369e3a64985a5b814f9624ae9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  initialText: we could increase our army so our people would feel more safe. Should
+    we do it? (costs 50 gold, adds 10 workers)
+  postponeText: As you wish, Your Majesty
+  agreeText: As you wish, Your Majesty
+  disagreeText: As you wish, Your Majesty
+  watText: Didn't get it
+  onStart: []
+  onAgree:
+  - gold:-50
+  - workers:10
+  onDisagree: []
+  onPostpone: []
+  postponable: 1
+  reply: 
 --- !u!1001 &528802155
 Prefab:
   m_ObjectHideFlags: 0
@@ -3544,7 +3653,7 @@ Transform:
   m_LocalScale: {x: 0.9999988, y: 0.9999988, z: 0.9999988}
   m_Children: []
   m_Father: {fileID: 2031547732}
-  m_RootOrder: 4
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &569598907
 MonoBehaviour:
@@ -3559,9 +3668,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   initialText: there are 30 refugees at the castle's gates and they seem hungry. Should
     we accept them? (adds 30 population)
-  postponeText: They won't wait, unfortunately... But as you wish, your majesty...
-  agreeText: You are so kind, your majesty.
-  disagreeText: As you wish, your majesty...
+  postponeText: They won't wait, unfortunately... As you wish, Your Majesty...
+  agreeText: You are so kind, Your Majesty.
+  disagreeText: As you wish, Your Majesty...
   watText: Didn't get it
   onStart: []
   onAgree:
@@ -4463,7 +4572,7 @@ Transform:
   m_LocalScale: {x: 0.9999988, y: 0.9999988, z: 0.9999988}
   m_Children: []
   m_Father: {fileID: 2031547732}
-  m_RootOrder: 20
+  m_RootOrder: 23
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &671499113
 MonoBehaviour:
@@ -4478,15 +4587,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   initialText: thieves in our arsenal! Should we do nothing and let them steal? (loose
     20 weapons)
-  postponeText: As you wish, your majesty
-  agreeText: As you wish, your majesty
-  disagreeText: As you wish, your majesty
+  postponeText: As you wish, Your Majesty
+  agreeText: As you wish, Your Majesty
+  disagreeText: As you wish, Your Majesty
   watText: Didn't get it
   onStart: []
   onAgree:
-  - gold:-200
+  - weapons:-20
   onDisagree: []
-  onPostpone: []
+  onPostpone:
+  - weapons:-20
   postponable: 0
   reply: 
 --- !u!1001 &675347741
@@ -4616,7 +4726,7 @@ Transform:
   m_LocalScale: {x: 0.9999988, y: 0.9999988, z: 0.9999988}
   m_Children: []
   m_Father: {fileID: 2031547732}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &677378404
 MonoBehaviour:
@@ -4630,10 +4740,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   initialText: we could build a forgery to produce more weapons. Should we do it?
-    (requires 50 building materials, produces 20 weapons)
-  postponeText: As you wish, your majesty
-  agreeText: As you wish, your majesty
-  disagreeText: As you wish, your majesty
+    (requires 50 building materials, produces 20 weapons once)
+  postponeText: As you wish, Your Majesty
+  agreeText: As you wish, Your Majesty
+  disagreeText: As you wish, Your Majesty
   watText: Didn't get it
   onStart: []
   onAgree:
@@ -5177,7 +5287,7 @@ Transform:
   m_LocalScale: {x: 0.9999988, y: 0.9999988, z: 0.9999988}
   m_Children: []
   m_Father: {fileID: 2031547732}
-  m_RootOrder: 16
+  m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &785088214
 MonoBehaviour:
@@ -5192,9 +5302,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   initialText: we could pray the Gods to increase the harvest from our farms. Should
     we do it? (adds 200 food)
-  postponeText: As you wish, your majesty
-  agreeText: As you wish, your majesty
-  disagreeText: As you wish, your majesty
+  postponeText: As you wish, Your Majesty
+  agreeText: As you wish, Your Majesty
+  disagreeText: As you wish, Your Majesty
   watText: Didn't get it
   onStart: []
   onAgree:
@@ -5394,7 +5504,7 @@ Transform:
   m_LocalScale: {x: 0.9999988, y: 0.9999988, z: 0.9999988}
   m_Children: []
   m_Father: {fileID: 2031547732}
-  m_RootOrder: 12
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &812546334
 MonoBehaviour:
@@ -5409,15 +5519,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   initialText: our barn is on fire! Should we do nothing and let it burn? (loose 200
     food)
-  postponeText: As you wish, your majesty
-  agreeText: As you wish, your majesty
-  disagreeText: As you wish, your majesty
+  postponeText: As you wish, Your Majesty
+  agreeText: As you wish, Your Majesty
+  disagreeText: As you wish, Your Majesty
   watText: Didn't get it
   onStart: []
   onAgree:
   - food:-200
   onDisagree: []
-  onPostpone: []
+  onPostpone:
+  - food:-200
   postponable: 0
   reply: 
 --- !u!224 &816875537 stripped
@@ -5606,7 +5717,7 @@ Transform:
   m_LocalScale: {x: 0.9999988, y: 0.9999988, z: 0.9999988}
   m_Children: []
   m_Father: {fileID: 2031547732}
-  m_RootOrder: 22
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &862900284
 MonoBehaviour:
@@ -5620,10 +5731,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   initialText: we could build a forgery to produce more weapons. Should we do it?
-    (requires 50 building materials, produces 20 weapons)
-  postponeText: As you wish, your majesty
-  agreeText: As you wish, your majesty
-  disagreeText: As you wish, your majesty
+    (requires 50 building materials, produces 20 weapons once)
+  postponeText: As you wish, Your Majesty
+  agreeText: As you wish, Your Majesty
+  disagreeText: As you wish, Your Majesty
   watText: Didn't get it
   onStart: []
   onAgree:
@@ -6482,6 +6593,60 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 68861db020c8045d28cf3945a9676916, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1026183714
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1026183715}
+  - component: {fileID: 1026183716}
+  m_Layer: 0
+  m_Name: Hire more workers (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1026183715
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1026183714}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.00009565355, y: -0.000047826776, z: 0}
+  m_LocalScale: {x: 1.0000011, y: 1.0000011, z: 1.0000011}
+  m_Children: []
+  m_Father: {fileID: 2031547732}
+  m_RootOrder: 32
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1026183716
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1026183714}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09c724369e3a64985a5b814f9624ae9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  initialText: we could increase our army so our people would feel more safe. Should
+    we do it? (costs 50 gold, adds 10 workers)
+  postponeText: As you wish, Your Majesty
+  agreeText: As you wish, Your Majesty
+  disagreeText: As you wish, Your Majesty
+  watText: Didn't get it
+  onStart: []
+  onAgree:
+  - gold:-50
+  - workers:10
+  onDisagree: []
+  onPostpone: []
+  postponable: 1
+  reply: 
 --- !u!1 &1027580772
 GameObject:
   m_ObjectHideFlags: 0
@@ -6989,6 +7154,60 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!1 &1181884477
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1181884478}
+  - component: {fileID: 1181884479}
+  m_Layer: 0
+  m_Name: Sell building resources (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1181884478
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1181884477}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.00022319162, y: -0.00011159581, z: 0}
+  m_LocalScale: {x: 1.0000011, y: 1.0000011, z: 1.0000011}
+  m_Children: []
+  m_Father: {fileID: 2031547732}
+  m_RootOrder: 29
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1181884479
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1181884477}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09c724369e3a64985a5b814f9624ae9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  initialText: we could sell our building materials to get some gold. Should we do
+    it? (costs 100 building materials, adds 100 gold)
+  postponeText: As you wish, Your Majesty. We can do it anytime.
+  agreeText: As you wish, Your Majesty. Gold could be more useful.
+  disagreeText: As you wish, Your Majesty. Building materials could be more useful.
+  watText: Didn't get it
+  onStart: []
+  onAgree:
+  - gold:100
+  - buildingResources:-100
+  onDisagree: []
+  onPostpone: []
+  postponable: 1
+  reply: 
 --- !u!1001 &1200913812
 Prefab:
   m_ObjectHideFlags: 0
@@ -7502,7 +7721,7 @@ Transform:
   m_LocalScale: {x: 0.9999988, y: 0.9999988, z: 0.9999988}
   m_Children: []
   m_Father: {fileID: 2031547732}
-  m_RootOrder: 18
+  m_RootOrder: 21
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1223349676
 MonoBehaviour:
@@ -7517,9 +7736,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   initialText: we could pray the Gods to increase the harvest from our farms. Should
     we do it? (adds 200 food)
-  postponeText: As you wish, your majesty
-  agreeText: As you wish, your majesty
-  disagreeText: As you wish, your majesty
+  postponeText: As you wish, Your Majesty
+  agreeText: As you wish, Your Majesty
+  disagreeText: As you wish, Your Majesty
   watText: Didn't get it
   onStart: []
   onAgree:
@@ -8005,7 +8224,7 @@ Transform:
   m_LocalScale: {x: 0.9999988, y: 0.9999988, z: 0.9999988}
   m_Children: []
   m_Father: {fileID: 2031547732}
-  m_RootOrder: 11
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1307556163
 MonoBehaviour:
@@ -8020,15 +8239,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   initialText: thieves in our treasury! Should we do nothing and let them steal? (loose
     200 gold)
-  postponeText: As you wish, your majesty
-  agreeText: As you wish, your majesty
-  disagreeText: As you wish, your majesty
+  postponeText: As you wish, Your Majesty
+  agreeText: As you wish, Your Majesty
+  disagreeText: As you wish, Your Majesty
   watText: Didn't get it
   onStart: []
   onAgree:
   - gold:-200
   onDisagree: []
-  onPostpone: []
+  onPostpone:
+  - gold:-200
   postponable: 0
   reply: 
 --- !u!1001 &1326946681
@@ -8192,7 +8412,7 @@ Transform:
   m_LocalScale: {x: 0.9999988, y: 0.9999988, z: 0.9999988}
   m_Children: []
   m_Father: {fileID: 2031547732}
-  m_RootOrder: 7
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1370752354
 MonoBehaviour:
@@ -8207,15 +8427,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   initialText: our barn is on fire! Should we do nothing and let it burn? (loose 200
     food)
-  postponeText: As you wish, your majesty
-  agreeText: As you wish, your majesty
-  disagreeText: As you wish, your majesty
+  postponeText: As you wish, Your Majesty
+  agreeText: As you wish, Your Majesty
+  disagreeText: As you wish, Your Majesty
   watText: Didn't get it
   onStart: []
   onAgree:
   - food:-200
   onDisagree: []
-  onPostpone: []
+  onPostpone:
+  - food:-200
   postponable: 0
   reply: 
 --- !u!1 &1371259288
@@ -8245,7 +8466,7 @@ Transform:
   m_LocalScale: {x: 0.9999988, y: 0.9999988, z: 0.9999988}
   m_Children: []
   m_Father: {fileID: 2031547732}
-  m_RootOrder: 21
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1371259290
 MonoBehaviour:
@@ -8260,9 +8481,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   initialText: we could increase our army so our people would feel more safe. Should
     we do it? (costs 50 gold, adds 25 army)
-  postponeText: As you wish, your majesty
-  agreeText: As you wish, your majesty
-  disagreeText: As you wish, your majesty
+  postponeText: As you wish, Your Majesty
+  agreeText: As you wish, Your Majesty
+  disagreeText: As you wish, Your Majesty
   watText: Didn't get it
   onStart: []
   onAgree:
@@ -8582,9 +8803,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   initialText: a merchant came to our castle. He wants to sell us building materials.
     Should we buy it? (costs 100 gold for 100 building materials)
-  postponeText: As you wish, your majesty
-  agreeText: As you wish, your majesty
-  disagreeText: As you wish, your majesty
+  postponeText: As you wish, Your Majesty
+  agreeText: As you wish, Your Majesty
+  disagreeText: As you wish, Your Majesty
   watText: Didn't get it
   onStart: []
   onAgree:
@@ -8983,7 +9204,7 @@ Transform:
   m_LocalScale: {x: 0.9999988, y: 0.9999988, z: 0.9999988}
   m_Children: []
   m_Father: {fileID: 2031547732}
-  m_RootOrder: 17
+  m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1491018750
 MonoBehaviour:
@@ -8998,9 +9219,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   initialText: we could pray the Gods to increase the harvest from our farms. Should
     we do it? (adds 200 food)
-  postponeText: As you wish, your majesty
-  agreeText: As you wish, your majesty
-  disagreeText: As you wish, your majesty
+  postponeText: As you wish, Your Majesty
+  agreeText: As you wish, Your Majesty
+  disagreeText: As you wish, Your Majesty
   watText: Didn't get it
   onStart: []
   onAgree:
@@ -9036,7 +9257,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2031547732}
-  m_RootOrder: 0
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1493588099
 MonoBehaviour:
@@ -9050,7 +9271,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   initialText: we could build a farm to produce more food. Should we do it? (requires
-    30 building materials, produces 300 food)
+    30 building materials, produces 300 food once)
   postponeText: As you wish, Your Majesty. We can postpone it.
   agreeText: As you wish, Your Majesty. We'll start building the farm.
   disagreeText: As you wish, Your Majesty. We can survive without food for now.
@@ -9090,7 +9311,7 @@ Transform:
   m_LocalScale: {x: 1.0000011, y: 1.0000011, z: 1.0000011}
   m_Children: []
   m_Father: {fileID: 2031547732}
-  m_RootOrder: 23
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1503821337
 MonoBehaviour:
@@ -9105,9 +9326,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   initialText: a merchant came to our castle. He wants to sell us building materials.
     Should we buy it? (costs 100 gold for 100 building materials)
-  postponeText: As you wish, your majesty
-  agreeText: As you wish, your majesty
-  disagreeText: As you wish, your majesty
+  postponeText: As you wish, Your Majesty
+  agreeText: As you wish, Your Majesty
+  disagreeText: As you wish, Your Majesty
   watText: Didn't get it
   onStart: []
   onAgree:
@@ -9241,6 +9462,60 @@ RectTransform:
   m_PrefabParentObject: {fileID: 224057390995411416, guid: 68861db020c8045d28cf3945a9676916,
     type: 2}
   m_PrefabInternal: {fileID: 2133129078}
+--- !u!1 &1540863976
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1540863977}
+  - component: {fileID: 1540863978}
+  m_Layer: 0
+  m_Name: Mine gold (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1540863977
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1540863976}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.00015942258, y: -0.00009565355, z: 0}
+  m_LocalScale: {x: 1.0000011, y: 1.0000011, z: 1.0000011}
+  m_Children: []
+  m_Father: {fileID: 2031547732}
+  m_RootOrder: 26
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1540863978
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1540863976}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09c724369e3a64985a5b814f9624ae9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  initialText: we could mine gold in the old mines. However, it seems dangerous. Should
+    we do it? (adds 200 gold, loose 5 workers)
+  postponeText: As you wish, Your Majesty. We can do it anytime.
+  agreeText: As you wish, Your Majesty. Wish our miners luck!
+  disagreeText: As you wish, Your Majesty. Better safe than sorry.
+  watText: Didn't get it
+  onStart: []
+  onAgree:
+  - gold:200
+  - workers:-5
+  onDisagree: []
+  onPostpone: []
+  postponable: 1
+  reply: 
 --- !u!224 &1544609784 stripped
 RectTransform:
   m_PrefabParentObject: {fileID: 224638721636799466, guid: a7b4d54880ee24e2592629627968d14c,
@@ -9497,7 +9772,7 @@ Transform:
   m_LocalScale: {x: 0.9999988, y: 0.9999988, z: 0.9999988}
   m_Children: []
   m_Father: {fileID: 2031547732}
-  m_RootOrder: 15
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1558729468
 MonoBehaviour:
@@ -10010,7 +10285,7 @@ Transform:
   m_LocalScale: {x: 0.9999988, y: 0.9999988, z: 0.9999988}
   m_Children: []
   m_Father: {fileID: 2031547732}
-  m_RootOrder: 8
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1648192148
 MonoBehaviour:
@@ -10025,15 +10300,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   initialText: thieves in our treasury! Should we do nothing and let them steal? (loose
     200 gold)
-  postponeText: As you wish, your majesty
-  agreeText: As you wish, your majesty
-  disagreeText: As you wish, your majesty
+  postponeText: As you wish, Your Majesty
+  agreeText: As you wish, Your Majesty
+  disagreeText: As you wish, Your Majesty
   watText: Didn't get it
   onStart: []
   onAgree:
   - gold:-200
   onDisagree: []
-  onPostpone: []
+  onPostpone:
+  - gold:-200
   postponable: 0
   reply: 
 --- !u!224 &1649921123 stripped
@@ -10636,7 +10912,7 @@ Transform:
   m_LocalScale: {x: 0.9999988, y: 0.9999988, z: 0.9999988}
   m_Children: []
   m_Father: {fileID: 2031547732}
-  m_RootOrder: 13
+  m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1717704383
 MonoBehaviour:
@@ -10650,7 +10926,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   initialText: we could build a farm to produce more food. Should we do it? (requires
-    30 building materials, produces 300 food)
+    30 building materials, produces 300 food once)
   postponeText: As you wish, Your Majesty. We can postpone it.
   agreeText: As you wish, Your Majesty. We'll start building the farm.
   disagreeText: As you wish, Your Majesty. We can survive without food for now.
@@ -11394,7 +11670,7 @@ Transform:
   m_LocalScale: {x: 0.9999988, y: 0.9999988, z: 0.9999988}
   m_Children: []
   m_Father: {fileID: 2031547732}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1916990650
 MonoBehaviour:
@@ -11720,7 +11996,7 @@ Transform:
   m_LocalScale: {x: 1.0000011, y: 1.0000011, z: 1.0000011}
   m_Children: []
   m_Father: {fileID: 2031547732}
-  m_RootOrder: 26
+  m_RootOrder: 27
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1956465116
 MonoBehaviour:
@@ -11733,7 +12009,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09c724369e3a64985a5b814f9624ae9f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  initialText: we could sell oiur building materials to get some gold. Should we do
+  initialText: we could sell our building materials to get some gold. Should we do
     it? (costs 100 building materials, adds 100 gold)
   postponeText: As you wish, Your Majesty. We can do it anytime.
   agreeText: As you wish, Your Majesty. Gold could be more useful.
@@ -11908,34 +12184,39 @@ Transform:
   m_LocalPosition: {x: -959.99994, y: -478.56427, z: 0}
   m_LocalScale: {x: 1.914257, y: 1.914257, z: 1.914257}
   m_Children:
-  - {fileID: 1493588098}
   - {fileID: 1916990649}
+  - {fileID: 1558729467}
   - {fileID: 1441449560}
+  - {fileID: 1503821336}
   - {fileID: 677378403}
+  - {fileID: 862900283}
   - {fileID: 569598906}
   - {fileID: 363249370}
   - {fileID: 400721105}
-  - {fileID: 1370752353}
-  - {fileID: 1648192147}
-  - {fileID: 492797629}
   - {fileID: 67452419}
-  - {fileID: 1307556162}
+  - {fileID: 1370752353}
   - {fileID: 812546333}
+  - {fileID: 1648192147}
+  - {fileID: 1307556162}
+  - {fileID: 492797629}
+  - {fileID: 1371259289}
+  - {fileID: 1493588098}
   - {fileID: 1717704382}
   - {fileID: 2076828159}
-  - {fileID: 1558729467}
   - {fileID: 785088213}
   - {fileID: 1491018749}
   - {fileID: 1223349675}
   - {fileID: 285856303}
   - {fileID: 671499112}
-  - {fileID: 1371259289}
-  - {fileID: 862900283}
-  - {fileID: 1503821336}
   - {fileID: 524011208}
   - {fileID: 1808341785}
+  - {fileID: 1540863977}
   - {fileID: 1956465115}
   - {fileID: 235722457}
+  - {fileID: 1181884478}
+  - {fileID: 13738126}
+  - {fileID: 526590212}
+  - {fileID: 1026183715}
   m_Father: {fileID: 1177720731}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -12372,7 +12653,7 @@ Transform:
   m_LocalScale: {x: 0.9999988, y: 0.9999988, z: 0.9999988}
   m_Children: []
   m_Father: {fileID: 2031547732}
-  m_RootOrder: 14
+  m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2076828160
 MonoBehaviour:
@@ -12386,7 +12667,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   initialText: we could build a farm to produce more food. Should we do it? (requires
-    30 building materials, produces 300 food)
+    30 building materials, produces 300 food once)
   postponeText: As you wish, Your Majesty. We can postpone it.
   agreeText: As you wish, Your Majesty. We'll start building the farm.
   disagreeText: As you wish, Your Majesty. We can survive without food for now.
