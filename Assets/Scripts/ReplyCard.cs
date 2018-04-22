@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ReplyCard : MonoBehaviour {
 
@@ -9,7 +10,7 @@ public class ReplyCard : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		
+		GetComponent<Button> ().onClick.AddListener (Play);
 	}
 	
 	// Update is called once per frame
@@ -17,7 +18,7 @@ public class ReplyCard : MonoBehaviour {
 		
 	}
 
-	public string getAction(int kingsMood) {
+	public string GetAction(int kingsMood) {
 		switch (kingsMood) {
 		case -1:
 			return "no";
@@ -30,7 +31,11 @@ public class ReplyCard : MonoBehaviour {
 		}
 	}
 
-	public string getAction() {
+	public string GetAction() {
 		return action;
+	}
+
+	public void Play() {
+		GameObject.Find ("GameManager").GetComponent<GameManager> ().PlayCard (this);
 	}
 }

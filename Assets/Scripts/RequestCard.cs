@@ -5,14 +5,18 @@ using UnityEngine;
 public class RequestCard : MonoBehaviour {
 
 	public string initialText;
-	public bool postponable = true;
 	public string postponeText = "As you wish, your majesty";
 	public string agreeText = "As you wish, your majesty";
 	public string disagreeText = "As you wish, your majesty";
+	public string watText = "Oh, of course, your majesty... (WTF?!)";
 
-	public string[] agreeResults;
-	public string[] disagreeResults;
-	public string[] postponeResults;
+	public string[] onStart;
+	public string[] onAgree;
+	public string[] onDisagree;
+	public string[] onPostpone;
+
+	public bool postponable = true;
+	public string reply;
 
 	// Use this for initialization
 	void Start () {
@@ -24,7 +28,19 @@ public class RequestCard : MonoBehaviour {
 		
 	}
 
-	public void ResolveReply(string reply, GameManager gameManager) {
-		//TODO: Resolve reply
+	public string ResolveReply(GameManager game) {
+		switch (reply) {
+		case "yes":
+			game.willHappen = onAgree;
+			return agreeText;
+		case "no":
+			game.willHappen = onDisagree;
+			return disagreeText;
+		case "later":
+			game.willHappen = onPostpone;
+			return postponeText;
+		default:
+			return watText;
+		}
 	}
 }

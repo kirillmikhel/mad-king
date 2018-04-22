@@ -19,12 +19,16 @@ public class Mediator : MonoBehaviour {
 		request.localScale = new Vector3 (1, 1, 1);
 	}
 
-	public void StartRequest () {
+	public RequestCard GetRequest() {
+		return GetComponentInChildren<RequestCard> ();
+	}
 
+	public void StartRequest () {
+		
 	}
 
 	public void EndRequest() {
-		Destroy (transform.GetChild (0).gameObject);
+		Destroy (GetComponentInChildren<RequestCard> ().gameObject);
 	}
 
 }
