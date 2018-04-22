@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour {
 
@@ -113,11 +114,11 @@ public class GameManager : MonoBehaviour {
 
 	private void CheckWinConditions () {
 		if (happiness <= 0) {
-			// TODO: Show failure screen
+			SceneManager.LoadScene ("gameover");
 		}
 
 		if (currentDay >= daysToWin) {
-			// TODO: Show victory screen
+			SceneManager.LoadScene ("victory");
 		}
 	}
 
@@ -256,7 +257,7 @@ public class GameManager : MonoBehaviour {
 	}
 
 	private int GetFoodChange () {
-		return (int)(- population - army - workers) / 2;
+		return (int)(- population - army - workers) / 3;
 	}
 
 	private int GetGoldChange () {
@@ -280,9 +281,9 @@ public class GameManager : MonoBehaviour {
 
 		happiness += 
 			(food < 0 ? -5 : 2) // food availablity
-			+ (army < population / 4 ? -5 : 2) // safety
+			+ (army < population / 4 ? -3 : 2) // safety
 			+ (gold < 0 ? -5 : 0) // salary
-			+ (weapons < army ? - (int) (army - weapons) / 4 : 0) // weapons availablity
+			+ (weapons < army ? - (int) (army - weapons) / 6 : 0) // weapons availablity
 			;
 
 		happiness = Mathf.Clamp (happiness, 0, 100);

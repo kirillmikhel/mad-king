@@ -454,8 +454,8 @@ MonoBehaviour:
   initialText: 'there are people outside the castle''s gates. They seem like bandits.
     Should we open the gates? '
   postponeText: As you wish, Your Majesty. I hope they'll go away.
-  agreeText: As you wish, Your Majesty
-  disagreeText: As you wish, Your Majesty
+  agreeText: As you wish, Your Majesty. I'll open the gates.
+  disagreeText: As you wish, Your Majesty. We won't let them in!
   watText: Didn't get it
   onStart: []
   onAgree:
@@ -1724,7 +1724,7 @@ Transform:
   m_LocalScale: {x: 0.9999988, y: 0.9999988, z: 0.9999988}
   m_Children: []
   m_Father: {fileID: 2031547732}
-  m_RootOrder: 22
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &285856304
 MonoBehaviour:
@@ -1739,9 +1739,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   initialText: thieves in our arsenal! Should we do nothing and let them steal? (loose
     20 weapons)
-  postponeText: As you wish, Your Majesty
-  agreeText: As you wish, Your Majesty
-  disagreeText: As you wish, Your Majesty
+  postponeText: As you wish, Your Majesty... Let's wait until the thieves get what
+    they want.
+  agreeText: As you wish, Your Majesty. Our army can perefectly fight with bare hands...
+  disagreeText: As you wish, Your Majesty! We'll catch the thieves right away!
   watText: Didn't get it
   onStart: []
   onAgree:
@@ -2472,8 +2473,8 @@ MonoBehaviour:
   initialText: 'there are people outside the castle''s gates. They seem like bandits.
     Should we open the gates? '
   postponeText: As you wish, Your Majesty. I hope they'll go away.
-  agreeText: As you wish, Your Majesty
-  disagreeText: As you wish, Your Majesty
+  agreeText: As you wish, Your Majesty. I'll open the gates.
+  disagreeText: As you wish, Your Majesty. We won't let them in!
   watText: Didn't get it
   onStart: []
   onAgree:
@@ -3067,7 +3068,7 @@ Transform:
   m_LocalScale: {x: 0.9999988, y: 0.9999988, z: 0.9999988}
   m_Children: []
   m_Father: {fileID: 2031547732}
-  m_RootOrder: 14
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &492797630
 MonoBehaviour:
@@ -4572,7 +4573,7 @@ Transform:
   m_LocalScale: {x: 0.9999988, y: 0.9999988, z: 0.9999988}
   m_Children: []
   m_Father: {fileID: 2031547732}
-  m_RootOrder: 23
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &671499113
 MonoBehaviour:
@@ -4587,9 +4588,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   initialText: thieves in our arsenal! Should we do nothing and let them steal? (loose
     20 weapons)
-  postponeText: As you wish, Your Majesty
-  agreeText: As you wish, Your Majesty
-  disagreeText: As you wish, Your Majesty
+  postponeText: As you wish, Your Majesty... Let's wait until the thieves get what
+    they want.
+  agreeText: As you wish, Your Majesty. Our army can perefectly fight with bare hands...
+  disagreeText: As you wish, Your Majesty! We'll catch the thieves right away!
   watText: Didn't get it
   onStart: []
   onAgree:
@@ -5287,7 +5289,7 @@ Transform:
   m_LocalScale: {x: 0.9999988, y: 0.9999988, z: 0.9999988}
   m_Children: []
   m_Father: {fileID: 2031547732}
-  m_RootOrder: 19
+  m_RootOrder: 21
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &785088214
 MonoBehaviour:
@@ -5519,9 +5521,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   initialText: our barn is on fire! Should we do nothing and let it burn? (loose 200
     food)
-  postponeText: As you wish, Your Majesty
-  agreeText: As you wish, Your Majesty
-  disagreeText: As you wish, Your Majesty
+  postponeText: As you wish, Your Majesty... Let's wait while it burns.
+  agreeText: As you wish, Your Majesty. We don't need it anyway...
+  disagreeText: As you wish, Your Majesty! We'll save it.
   watText: Didn't get it
   onStart: []
   onAgree:
@@ -7721,7 +7723,7 @@ Transform:
   m_LocalScale: {x: 0.9999988, y: 0.9999988, z: 0.9999988}
   m_Children: []
   m_Father: {fileID: 2031547732}
-  m_RootOrder: 21
+  m_RootOrder: 23
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1223349676
 MonoBehaviour:
@@ -8239,9 +8241,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   initialText: thieves in our treasury! Should we do nothing and let them steal? (loose
     200 gold)
-  postponeText: As you wish, Your Majesty
-  agreeText: As you wish, Your Majesty
-  disagreeText: As you wish, Your Majesty
+  postponeText: As you wish, Your Majesty... Let's wait while the thieves get as much
+    as th.ey want
+  agreeText: As you wish, Your Majesty. We don't need so much money anyway.
+  disagreeText: As you wish, Your Majesty! We'll catch the thieves right away!
   watText: Didn't get it
   onStart: []
   onAgree:
@@ -8427,9 +8430,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   initialText: our barn is on fire! Should we do nothing and let it burn? (loose 200
     food)
-  postponeText: As you wish, Your Majesty
-  agreeText: As you wish, Your Majesty
-  disagreeText: As you wish, Your Majesty
+  postponeText: As you wish, Your Majesty... Let's wait while it burns.
+  agreeText: As you wish, Your Majesty. We don't need it anyway...
+  disagreeText: As you wish, Your Majesty! We'll save it.
   watText: Didn't get it
   onStart: []
   onAgree:
@@ -8466,7 +8469,7 @@ Transform:
   m_LocalScale: {x: 0.9999988, y: 0.9999988, z: 0.9999988}
   m_Children: []
   m_Father: {fileID: 2031547732}
-  m_RootOrder: 15
+  m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1371259290
 MonoBehaviour:
@@ -9204,7 +9207,7 @@ Transform:
   m_LocalScale: {x: 0.9999988, y: 0.9999988, z: 0.9999988}
   m_Children: []
   m_Father: {fileID: 2031547732}
-  m_RootOrder: 20
+  m_RootOrder: 22
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1491018750
 MonoBehaviour:
@@ -9257,7 +9260,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2031547732}
-  m_RootOrder: 16
+  m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1493588099
 MonoBehaviour:
@@ -10300,9 +10303,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   initialText: thieves in our treasury! Should we do nothing and let them steal? (loose
     200 gold)
-  postponeText: As you wish, Your Majesty
-  agreeText: As you wish, Your Majesty
-  disagreeText: As you wish, Your Majesty
+  postponeText: As you wish, Your Majesty... Let's wait while the thieves get as much
+    as th.ey want
+  agreeText: As you wish, Your Majesty. We don't need so much money anyway.
+  disagreeText: As you wish, Your Majesty! We'll catch the thieves right away!
   watText: Didn't get it
   onStart: []
   onAgree:
@@ -10912,7 +10916,7 @@ Transform:
   m_LocalScale: {x: 0.9999988, y: 0.9999988, z: 0.9999988}
   m_Children: []
   m_Father: {fileID: 2031547732}
-  m_RootOrder: 17
+  m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1717704383
 MonoBehaviour:
@@ -10966,7 +10970,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 989f6e73efad3462bad0111d9c45b6db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  happiness: 70
+  happiness: 60
   population: 120
   army: 60
   workers: 20
@@ -12198,6 +12202,8 @@ Transform:
   - {fileID: 812546333}
   - {fileID: 1648192147}
   - {fileID: 1307556162}
+  - {fileID: 285856303}
+  - {fileID: 671499112}
   - {fileID: 492797629}
   - {fileID: 1371259289}
   - {fileID: 1493588098}
@@ -12206,8 +12212,6 @@ Transform:
   - {fileID: 785088213}
   - {fileID: 1491018749}
   - {fileID: 1223349675}
-  - {fileID: 285856303}
-  - {fileID: 671499112}
   - {fileID: 524011208}
   - {fileID: 1808341785}
   - {fileID: 1540863977}
@@ -12653,7 +12657,7 @@ Transform:
   m_LocalScale: {x: 0.9999988, y: 0.9999988, z: 0.9999988}
   m_Children: []
   m_Father: {fileID: 2031547732}
-  m_RootOrder: 18
+  m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2076828160
 MonoBehaviour:
