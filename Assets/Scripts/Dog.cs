@@ -16,6 +16,6 @@ public class Dog : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		text.text = "Dog " + (hasFood ? "has food" : "is hungry");
+		text.text = "Dog " + (hasFood ? "is eating food" : "is hungry");
 	}
 }

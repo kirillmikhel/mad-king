@@ -1,13 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
-public class Jest : MonoBehaviour {
-
-	public bool isSad;
-
-	public Text text;
+public class ClickToContinue : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
@@ -16,6 +12,10 @@ public class Jest : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		text.text = "Jest " + (isSad ? "is apathetic" : "is happy");
+		
+	}
+
+	public void NextScene() {
+		SceneManager.LoadScene (SceneManager.GetActiveScene ().buildIndex + 1);
 	}
 }
