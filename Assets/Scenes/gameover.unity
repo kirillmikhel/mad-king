@@ -215,7 +215,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 89}
+  m_AnchoredPosition: {x: 0, y: 126}
   m_SizeDelta: {x: 160, y: 192.89}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &903906492
@@ -289,7 +289,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.000030517578, y: -43.88999}
+  m_AnchoredPosition: {x: -0.000030517578, y: -19.999989}
   m_SizeDelta: {x: 160, y: 192.89}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1056727574
@@ -323,8 +323,9 @@ MonoBehaviour:
     m_RichText: 1
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 0
-    m_LineSpacing: 1
-  m_Text: Your kingdom's happiness reached zero.
+    m_LineSpacing: 1.2
+  m_Text: "Your Kingdom's happiness reached zero. \nThe revolt happened before you
+    son got back home."
 --- !u!222 &1056727575
 CanvasRenderer:
   m_ObjectHideFlags: 0

@@ -16,6 +16,6 @@ public class Jest : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		text.text = "Jest " + (isSad ? "is apathetic" : "is happy");
+		text.text = "Jest\n\n" + (isSad ? "is apathetic" : "is happy");
 	}
 }

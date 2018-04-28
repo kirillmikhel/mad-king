@@ -335,8 +335,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1.2
-  m_Text: "He is coming back from \na successful military campaign.\nCan you, The
-    King, \ndon't ruin the Kingdom \nuntil he's back?\n\nIt's just 30 days."
+  m_Text: "Your son is coming back from \na successful military campaign.\nCan you,
+    The King, \ndon't ruin the Kingdom \nuntil he's back?\n\nIt's just 30 days."
 --- !u!222 &1437720275
 CanvasRenderer:
   m_ObjectHideFlags: 0
