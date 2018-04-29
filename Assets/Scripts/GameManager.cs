@@ -100,8 +100,6 @@ public class GameManager : MonoBehaviour {
 		ResolveStatsChange (willHappen);
 		willHappen = new string[0];
 
-		CheckWinConditions ();
-
 		if (currentDay == dayToLoose1stCard || currentDay == dayToLoose2ndCard) {
 			hand.DiscardRandomCard ();
 		}
@@ -121,7 +119,7 @@ public class GameManager : MonoBehaviour {
 			SceneManager.LoadScene ("gameover");
 		}
 
-		if (currentDay >= daysToWin) {
+		if (currentDay > daysToWin) {
 			SceneManager.LoadScene ("victory");
 		}
 	}
@@ -129,6 +127,8 @@ public class GameManager : MonoBehaviour {
 	private IEnumerator Day () {
 		yield return StartCoroutine(Night.ShowStatsUpdated(this));
 		yield return StartCoroutine(Night.FadeIn());
+
+		CheckWinConditions ();
 
 		yield return new WaitForSeconds (1);
 		RequestCard request = mediator.GetRequest ();
