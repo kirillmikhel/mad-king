@@ -13352,7 +13352,7 @@ MonoBehaviour:
   gold: 500
   weapons: 50
   buildingResources: 70
-  daysToWin: 30
+  daysToWin: 3
   currentDay: 0
   dayToLoose1stCard: 10
   dayToLoose2ndCard: 20
