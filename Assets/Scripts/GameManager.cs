@@ -83,8 +83,8 @@ public class GameManager : MonoBehaviour {
 
 		UIProblems.text = problemsText;
 
-		UIStatsFood.text = "Food: " + food + " (" + (GetFoodChange() > 0 ? "+" : "") + GetFoodChange() + ")";
-		UIStatsGold.text = "Gold: " + gold + " (" + (GetGoldChange() > 0 ? "+" : "") + GetGoldChange() + ")";
+		UIStatsFood.text = food + " (" + (GetFoodChange() > 0 ? "+" : "") + GetFoodChange() + ")";
+		UIStatsGold.text = gold + " (" + (GetGoldChange() > 0 ? "+" : "") + GetGoldChange() + ")";
 		UIStatsWeapons.text = "Weapons: " + weapons;
 		UIStatsBuildingResources.text = "Building materials: " + buildingResources + " (" + (GetBuildingResourcesChange() > 0 ? "+" : "") + GetBuildingResourcesChange() + ")";
 		UIStatsPopulation.text = "Population: " + population + " (" + (GetPopulationChange() > 0 ? "+" : "") + GetPopulationChange() + ")";
